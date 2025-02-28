@@ -1,3 +1,174 @@
 {
-    
+    "HomePage": {
+        "hero": {
+            "title": "Albentosa",
+            "subtitle": "Football School",
+            "description": "Our goal is to develop tactical and correct positioning on the field, helping players make better decisions and optimize their performance in each match.",
+            "start_training": "Start Training",
+            "learn_more": "Learn More"
+        },
+        "features": {
+            "badge": "OUR PROGRAMS",
+            "title": "Elite Training Programs",
+            "description": "Choose from our comprehensive range of professional training programs designed to elevate your game",
+
+            "youth_title": "Youth Development",
+            "youth_description": "Specialized training for young talents aged 6-16",
+            "youth_feature1": "Technical Skills",
+            "youth_feature2": "Team Play",
+            "youth_feature3": "Physical Development",
+            
+            "elite_title": "Elite Training",
+            "elite_description": "Advanced programs for competitive players",
+            "elite_feature1": "Pro Coaching",
+            "elite_feature2": "Match Analysis",
+            "elite_feature3": "Performance Tracking",
+            
+            "summer_title": "Summer Camps",
+            "summer_description": "Intensive training camps during summer breaks",
+            "summer_feature1": "Daily Training",
+            "summer_feature2": "Friendly Matches",
+            "summer_feature3": "Pro Workshops",
+            
+            "tactical_title": "Tactical Mastery",
+            "tactical_description": "Develop strategic thinking and game awareness",
+            "tactical_feature1": "Positional Play",
+            "tactical_feature2": "Game Situations",
+            "tactical_feature3": "Decision Making",
+            
+            "physical_title": "Physical Conditioning",
+            "physical_description": "Improve strength, speed, and endurance",
+            "physical_feature1": "Agility Training",
+            "physical_feature2": "Explosive Power",
+            "physical_feature3": "Injury Prevention",
+            
+            "mental_title": "Mental Coaching",
+            "mental_description": "Develop mental toughness and resilience",
+            "mental_feature1": "Focus Training",
+            "mental_feature2": "Confidence Building",
+            "mental_feature3": "Pressure Management"
+        },
+        "sessions": {
+            "badge": "UPCOMING SESSIONS",
+            "title": "Albentosa's Trainings",
+            "tab_fallas": "Before Fallas",
+            "tab_easter": "Before Easter",
+            "calendar_title": "Training Calendar",
+            "spots_remaining_title": "Spots Remaining",
+            "spots_left": "8 spots left",
+            "spots_total": "32 total",
+            "reserve_button": "Reserve Your Spot",
+            
+            "fallas_title": "3 Sessions (Feb 23, Mar 2, Mar 9)",
+            "fallas_price": "€120",
+            "fallas_date1": "Feb 23, 2025",
+            "fallas_date2": "Mar 2, 2025",
+            "fallas_date3": "Mar 9, 2025",
+            "fallas_location": "Ciudad Deportiva Valencia CF",
+            "fallas_time": "10:00 AM - 12:00 PM",
+            "fallas_coach": "Raul Albentosa",
+            "fallas_capacity": "32 players max",
+            "fallas_feature1": "Technical skills development",
+            "fallas_feature2": "Tactical awareness training",
+            "fallas_feature3": "Small-sided games",
+            "fallas_feature4": "Professional feedback",
+            "fallas_feature5": "Video analysis session",
+            "fallas_feature6": "Personalized improvement plan",
+            
+            "easter_title": "3 Sessions (Mar 23, Mar 30, Apr 6)",
+            "easter_price": "€120",
+            "easter_date1": "Mar 23, 2025",
+            "easter_date2": "Mar 30, 2025",
+            "easter_date3": "Apr 6, 2025",
+            "easter_location": "Estadio Mestalla Training Grounds",
+            "easter_time": "10:00 AM - 12:00 PM",
+            "easter_coach": "Raul Albentosa",
+            "easter_capacity": "32 players max",
+            "easter_feature1": "Advanced technical drills",
+            "easter_feature2": "Position-specific training",
+            "easter_feature3": "Competitive match scenarios",
+            "easter_feature4": "Strength and conditioning",
+            "easter_feature5": "Mental preparation techniques",
+            "easter_feature6": "Professional evaluation report",
+
+            "calendar_sunday": "Sun",
+            "calendar_monday": "Mon",
+            "calendar_tuesday": "Tue",
+            "calendar_wednesday": "Wed",
+            "calendar_thursday": "Thu",
+            "calendar_friday": "Fri",
+            "calendar_saturday": "Sat",
+            
+            "features_title": "What's Included",
+            
+            "info_location": "Location",
+            "info_time": "Time",
+            "info_coach": "Coach",
+            "info_capacity": "Capacity"
+        },
+        "pricing": {
+            "badge": "PRICING & INFORMATION",
+            "title": "Training Information",
+            "description": "Professional training sessions tailored to your development",
+            
+            "capacity_title": "Capacity",
+            "capacity_places_title": "32 Places per Session",
+            "capacity_places_description": "Limited spots to ensure quality training",
+            "capacity_sessions_title": "Multiple Sessions Available",
+            "capacity_sessions_description": "Possibility of two sessions on Sundays",
+            "capacity_scheduling_title": "Flexible Scheduling",
+            "capacity_scheduling_description": "Open to additional days based on demand",
+            "capacity_reserve_message": "Reserve your spot today for priority access",
+
+            "rates_title": "Rates",
+            "rates_single_day_title": "Single day: €50",
+            "rates_single_day_description": "2 hours of training (€25/hour)",
+            "rates_monthly_title": "Monthly package",
+            "rates_monthly_description": "€40/Session = Total: €120, €160 or €200",
+            "rates_sessions_range": "3-5 Sessions",
+            "rates_best_value": "Best Value",
+            "rates_family_title": "Family Discount",
+            "rates_family_description": "Second sibling: €30/Session (€15/hour)",
+
+            "book_button": "Book Your Session"
+        },
+        "career": {
+            "badge": "PROFESSIONAL EXPERIENCE",
+            "name": "Raul Albentosa",
+            "title": "Professional Career",
+            "description1": "With over 15 years of professional experience in football, Raul Albentosa has competed at the highest levels of the sport, including La Liga and the English Championship.",
+            "description2": "His career spans multiple prestigious clubs across Europe, where he has developed a deep understanding of different playing styles and tactical approaches.",
+            "description3": "Now, he brings this wealth of experience to young athletes, helping them develop both technical skills and tactical understanding of the game.",
+            
+            "stats_matches": "Professional Matches",
+            "stats_goals": "Goals Scored",
+            "stats_experience": "Years Experience",
+            "stats_leagues": "Leagues Played",
+            
+            "highlights_title": "Career Highlights",
+            "achievement1": "La Liga Experience",
+            "achievement2": "English Championship",
+            "achievement3": "Copa del Rey",
+            "achievement4": "European Competitions",
+            
+            "image_alt1": "Career Highlight 1",
+            "image_alt2": "Career Highlight 2",
+            "image_alt3": "Career Highlight 3",
+            "image_alt4": "Career Highlight 4",
+            "image_alt5": "Career Highlight 5",
+            "image_alt6": "Career Highlight 6",
+            "image_alt7": "Career Highlight 7",
+            "image_alt8": "Career Highlight 8",
+            
+            "moment_title": "Career Moment",
+            "moment_period": "2015-2023",
+            "position": "Central Defender"
+        },
+        "previousClubs": {
+            "badge": "PROFESSIONAL JOURNEY",
+            "title": "Raul Albentosa's Career",
+            "club_image_alt": "{club} club logo",
+            "experience_summary": "15+ years of professional experience across 5 countries"
+        }
+    }
 }

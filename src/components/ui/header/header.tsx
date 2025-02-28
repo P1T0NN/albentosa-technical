@@ -8,8 +8,15 @@ import Image from "next/image";
 
 // COMPONENTS
 import { Button } from "@/components/ui/button";
+import { ChooseLanguage } from "@/components/ui/header/choose-language";
 
-export const Header = () => {
+interface HeaderProps {
+    locale: string;
+}
+
+export const Header = ({
+    locale
+}: HeaderProps) => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
 
@@ -95,9 +102,7 @@ export const Header = () => {
                                 </a>
                             ))}
                             
-                            <Button className="ml-4 sketchy-border bg-[#00ff00] text-black hover:bg-[#00ff00]/90">
-                                Sign Up
-                            </Button>
+                            <ChooseLanguage locale={locale} />
                         </div>
                     </div>
                 </div>

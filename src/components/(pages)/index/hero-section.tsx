@@ -1,54 +1,132 @@
+"use client";
+
+// REACTJS IMPORTS
+import { useRef, useEffect } from "react";
+
 // LIBRARIES
-import * as motion from "motion/react-client";
+import { motion, useScroll, useTransform } from "framer-motion";
+import gsap from "gsap";
+import { useTranslations } from "next-intl";
 
 // COMPONENTS
 import { Button } from "@/components/ui/button";
+import { GlitchText } from "@/components/ui/glitch-text";
+import { SoccerBallAnimation } from "@/components/ui/soccer-ball-animation";
 
 // LUCIDE ICONS
 import { ChevronRight } from "lucide-react";
 
 export const HeroSection = () => {
+    const t = useTranslations("HomePage.hero");
+
+    const containerRef = useRef<HTMLDivElement>(null);
+    const textRef = useRef<HTMLDivElement>(null);
+
+    const { scrollYProgress } = useScroll({
+        target: containerRef,
+        offset: ["start start", "end start"]
+    });
+
+    const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
+    const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+
+    useEffect(() => {
+        if (!textRef.current) return;
+
+        const chars = textRef.current.querySelectorAll('.char');
+        
+        gsap.fromTo(chars, 
+            { y: 100, opacity: 0 },
+            { 
+                y: 0, 
+                opacity: 1, 
+                stagger: 0.03, 
+                duration: 0.8, 
+                ease: "power4.out",
+                delay: 0.5
+            }
+        );
+    }, []);
+
+    const splitText = (text: string) => {
+        return text.split('').map((char, i) => (
+            <span key={i} className="char inline-block opacity-0">
+                {char === ' ' ? '\u00A0' : char}
+            </span>
+        ));
+    };
+
     return (
-        <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-            {/* Background Image */}
-            <div 
+        <section ref={containerRef} className="relative min-h-screen flex items-center justify-center overflow-hidden">
+            {/* Background Image with Parallax */}
+            <motion.div 
                 className="absolute inset-0 z-0"
-                style={{
-                    backgroundImage: 'url("/images/hero-section.jpg")',
-                    backgroundPosition: 'center 42.5%',
-                    backgroundSize: 'cover',
-                    backgroundRepeat: 'no-repeat'
-                }}
+                style={{ y }}
             >
-                <div className="absolute inset-0 bg-black/50" />
-            </div>
+                <div 
+                    className="absolute inset-0"
+                    style={{
+                        backgroundImage: 'url("/images/hero-section.jpg")',
+                        backgroundPosition: 'center 42.5%',
+                        backgroundSize: 'cover',
+                        backgroundRepeat: 'no-repeat'
+                    }}
+                >
+                    <div className="absolute inset-0 bg-black/60" />
+                </div>
+            </motion.div>
+
+            {/* Soccer Ball Animation */}
+            <SoccerBallAnimation count={5} />
 
             {/* Content */}
-            <div className="relative z-10 max-w-7xl mx-auto px-4 py-32 text-center text-white">
-                <motion.div
+            <motion.div 
+                className="relative z-10 max-w-7xl mx-auto px-4 py-32 text-center text-white"
+                style={{ opacity }}
+            >
+                <div ref={textRef} className="mb-6">
+                    <h1 className="text-6xl md:text-8xl font-bold tracking-tight">
+                        <div className="overflow-hidden">
+                            {splitText(t("title"))}
+                        </div>
+
+                        <div className="overflow-hidden mt-2">
+                            <GlitchText text={t("subtitle")} className="text-7xl md:text-9xl gradient-text" />
+                        </div>
+                    </h1>
+                </div>
+
+                <motion.p 
+                    className="text-xl md:text-2xl mb-12 max-w-3xl mx-auto text-gray-200"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
+                    transition={{ delay: 1.2, duration: 0.8 }}
                 >
-                    <h1 className="text-5xl md:text-7xl font-bold mb-6">
-                        Develop Your Soccer Skills
-                    </h1>
+                    {t("description")}
+                </motion.p>
 
-                    <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto text-gray-200">
-                        Train with professional coaches and unlock your potential on the field
-                    </p>
+                <motion.div 
+                    className="flex flex-col md:flex-row items-center justify-center gap-6"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 1.5, duration: 0.8 }}
+                >
+                    <Button 
+                        size="lg" 
+                        className="animated-border text-lg px-8 py-6 bg-primary hover:bg-primary/90 w-full md:w-auto"
+                    >
+                        {t("start_training")} <ChevronRight className="ml-2" />
+                    </Button>
 
-                    <div className="flex items-center justify-center gap-4">
-                        <Button size="lg" className="sketchy-border text-lg px-8 py-6 bg-primary hover:bg-primary/90">
-                            Start Training <ChevronRight className="ml-2" />
-                        </Button>
-
-                        <Button size="lg" variant="outline" className="text-black text-lg px-8 py-6 hover:bg-white/10 hover:text-white">
-                            Learn More
-                        </Button>
-                    </div>
+                    <Button 
+                        size="lg" 
+                        variant="outline" 
+                        className="text-black text-lg px-8 py-6 hover:bg-white/10 hover:text-white w-full md:w-auto"
+                    >
+                        {t("learn_more")}
+                    </Button>
                 </motion.div>
-            </div>
+            </motion.div>
 
             {/* Bottom Wave */}
             <div className="absolute bottom-0 left-0 right-0">
@@ -57,5 +135,5 @@ export const HeroSection = () => {
                 </svg>
             </div>
         </section>
-    )
-}
+    );
+};
