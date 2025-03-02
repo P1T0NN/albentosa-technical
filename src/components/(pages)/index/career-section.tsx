@@ -21,21 +21,13 @@ import {
 import { Card3D } from "@/components/ui/3d-card";
 import { GlitchText } from "@/components/ui/glitch-text";
 
+// DATA
+import { careerPhotosData } from "@/data/career-photos-data";
+
 export const CareerSection = () => {
     const t = useTranslations("HomePage.career");
     const ref = useRef<HTMLDivElement>(null);
     const isInView = useInView(ref, { once: true, amount: 0.2 });
-
-    const careerImages = [
-        { src: "/images/hero-section.jpg", alt: t("image_alt1") },
-        { src: "/images/hero-section.jpg", alt: t("image_alt2") },
-        { src: "/images/hero-section.jpg", alt: t("image_alt3") },
-        { src: "/images/hero-section.jpg", alt: t("image_alt4") },
-        { src: "/images/hero-section.jpg", alt: t("image_alt5") },
-        { src: "/images/hero-section.jpg", alt: t("image_alt6") },
-        { src: "/images/hero-section.jpg", alt: t("image_alt7") },
-        { src: "/images/hero-section.jpg", alt: t("image_alt8") }
-    ];
 
     const stats = [
         { label: t("stats_matches"), value: "350+" },
@@ -142,7 +134,7 @@ export const CareerSection = () => {
                             <div className="p-4 bg-white/5 rounded-lg">
                                 <Carousel opts={{ align: "start", loop: true }} className="w-full">
                                     <CarouselContent className="-ml-2 md:-ml-4">
-                                        {careerImages.map((image, index) => (
+                                        {careerPhotosData.map((image, index) => (
                                             <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/2">
                                                 <div className="relative aspect-video overflow-hidden rounded-lg">
                                                     <Image

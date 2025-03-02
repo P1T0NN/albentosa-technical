@@ -3,18 +3,17 @@
 // REACTJS IMPORTS
 import { useRef, useEffect } from "react";
 
+// NEXTJS IMPORTS
+import Image from "next/image";
+
 // LIBRARIES
 import { motion, useScroll, useTransform } from "framer-motion";
 import gsap from "gsap";
 import { useTranslations } from "next-intl";
 
 // COMPONENTS
-import { Button } from "@/components/ui/button";
 import { GlitchText } from "@/components/ui/glitch-text";
 import { SoccerBallAnimation } from "@/components/ui/soccer-ball-animation";
-
-// LUCIDE ICONS
-import { ChevronRight } from "lucide-react";
 
 export const HeroSection = () => {
     const t = useTranslations("HomePage.hero");
@@ -60,19 +59,22 @@ export const HeroSection = () => {
         <section ref={containerRef} className="relative min-h-screen flex items-center justify-center overflow-hidden">
             {/* Background Image with Parallax */}
             <motion.div 
-                className="absolute inset-0 z-0"
+                className="absolute inset-0 z-0 h-full w-full"
                 style={{ y }}
             >
-                <div 
-                    className="absolute inset-0"
-                    style={{
-                        backgroundImage: 'url("/images/hero-section.jpg")',
-                        backgroundPosition: 'center 42.5%',
-                        backgroundSize: 'cover',
-                        backgroundRepeat: 'no-repeat'
-                    }}
-                >
-                    <div className="absolute inset-0 bg-black/60" />
+                <div className="absolute inset-0 w-full h-full">
+                    <div className="relative w-full h-full">
+                        <Image 
+                            src="https://yqpabjfmvlumgdtqlpvk.supabase.co/storage/v1/object/public/albentosa-technical-prod/hero/hero-1-1.jpg"
+                            alt="Albentosa against Barcelona"
+                            fill
+                            priority
+                            className="object-cover object-[47.5%_center] md:object-[center_25%]"
+                            sizes="100vw"
+                            quality={90}
+                        />
+                        <div className="absolute inset-0 bg-black/60" />
+                    </div>
                 </div>
             </motion.div>
 
@@ -104,28 +106,6 @@ export const HeroSection = () => {
                 >
                     {t("description")}
                 </motion.p>
-
-                <motion.div 
-                    className="flex flex-col md:flex-row items-center justify-center gap-6"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 1.5, duration: 0.8 }}
-                >
-                    <Button 
-                        size="lg" 
-                        className="animated-border text-lg px-8 py-6 bg-primary hover:bg-primary/90 w-full md:w-auto"
-                    >
-                        {t("start_training")} <ChevronRight className="ml-2" />
-                    </Button>
-
-                    <Button 
-                        size="lg" 
-                        variant="outline" 
-                        className="text-black text-lg px-8 py-6 hover:bg-white/10 hover:text-white w-full md:w-auto"
-                    >
-                        {t("learn_more")}
-                    </Button>
-                </motion.div>
             </motion.div>
 
             {/* Bottom Wave */}

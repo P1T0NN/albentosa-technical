@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 
 // NEXTJS IMPORTS
 import Image from "next/image";
+import Link from "next/link";
 
 // COMPONENTS
 import { Button } from "@/components/ui/button";
@@ -52,8 +53,20 @@ export const Header = ({
                 <div className={`flex items-center justify-between transition-all duration-300 ${
                     scrolled ? 'h-16' : 'h-20'
                 }`}>
-                    {/* Mobile menu button */}
-                    <div className="md:hidden">
+                    {/* Mobile logo and menu */}
+                    <div className="flex justify-between items-center w-full md:hidden">
+                        {/* Logo on left for mobile */}
+                        <div>
+                            <Image 
+                                src="/logo/albentosa-technical-logo.png" 
+                                alt="Albentosa Football School" 
+                                width={scrolled ? 50 : 70} 
+                                height={scrolled ? 50 : 70}
+                                className="transition-all duration-300"
+                            />
+                        </div>
+                        
+                        {/* Menu button on right for mobile */}
                         <Button
                             variant="ghost"
                             onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -113,14 +126,19 @@ export const Header = ({
                 <div className="md:hidden bg-black">
                     <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                         {[...leftNavItems, ...rightNavItems].map((item) => (
-                            <a
+                            <Link
                                 key={item.name}
                                 href={item.href}
                                 className="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-[#00ff00]/10"
                             >
                                 {item.name}
-                            </a>
+                                
+                            </Link>
                         ))}
+
+                        <div className="px-3 py-2">
+                            <ChooseLanguage locale={locale} />
+                        </div>
                     </div>
                 </div>
             )}

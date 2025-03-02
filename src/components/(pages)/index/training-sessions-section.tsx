@@ -10,11 +10,8 @@ import { useTranslations } from "next-intl";
 // COMPONENTS
 import { Card } from "@/components/ui/card";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
-import { Button } from "@/components/ui/button";
 import { SessionInfoGrid } from "@/components/(pages)/index/session-info-grid";
 import { SessionFeatures } from "@/components/(pages)/index/session-features";
-import { SessionCalendar } from "@/components/(pages)/index/session-calendar";
-import { CountdownTimer } from "@/components/(pages)/index/countdown-timer";
 
 // DATA
 import { useSessionsData } from "@/data/hooks/useSessionData";
@@ -72,9 +69,9 @@ export const TrainingSessionsSection = () => {
                                 exit={{ opacity: 0, x: activeTab === "fallas" ? 20 : -20 }}
                                 transition={{ duration: 0.5 }}
                             >
-                                <div className="grid md:grid-cols-3 gap-8">
+                                <div className="flex justify-center">
                                     {/* Session Details */}
-                                    <div className="md:col-span-2">
+                                    <div className="w-full max-w-3xl">
                                         <Card className="p-8 sketchy-border h-full bg-white overflow-hidden relative">
                                             <div className="absolute top-0 right-0 w-32 h-32 -mr-16 -mt-16 bg-primary/10 rounded-full blur-3xl" />
                                             
@@ -101,11 +98,9 @@ export const TrainingSessionsSection = () => {
                                     </div>
                                     
                                     {/* Calendar and Booking */}
-                                    <div>
+                                    {/*<div>
                                         <Card className="p-8 sketchy-border h-full bg-white">
                                             <h3 className="text-xl font-bold mb-6">{t("calendar_title")}</h3>
-                                            
-                                            <SessionCalendar activeTab={activeTab} />
                                             
                                             <div className="space-y-4 mb-8">
                                                 <div>
@@ -126,7 +121,7 @@ export const TrainingSessionsSection = () => {
                                                 {t("reserve_button")}
                                             </Button>
                                         </Card>
-                                    </div>
+                                    </div>*/}
                                 </div>
                             </motion.div>
                         </TabsContent>

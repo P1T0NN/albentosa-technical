@@ -1,12 +1,12 @@
 export const previousClubsData = [
     {
         name: "Derby County",
-        period: "2015-2016",
+        period: "2015/2016",
         image: "/images/clubs/derby-county-fc.png"
     },
     {
         name: "Deportivo La Coruña",
-        period: "2016-2018",
+        period: "2016-2018/2019",
         image: "/images/clubs/deportivo-la-coruna.png"
     },
     {
@@ -16,47 +16,47 @@ export const previousClubsData = [
     },
     {
         name: "Cadiz",
-        period: "2019-2020",
+        period: "2012-2013",
         image: "/images/clubs/cadiz.png"
     },
     {
         name: "CSKA Sofia",
-        period: "2020-2021",
+        period: "2019-2020",
         image: "/images/clubs/cska-sofia.png",
     },
     {
         name: "Dinamo Bucuresti",
-        period: "2021-2022",
+        period: "2021",
         image: "/images/clubs/dinamo-bucuresti.png"
     },
     {
         name: "Eibar",
-        period: "2022-2023",
+        period: "2013-2015",
         image: "/images/clubs/eibar.png"
     },
     {
         name: "Elche",
-        period: "2023-2024",
+        period: "2007-2009",
         image: "/images/clubs/elche.png"
     },
     {
         name: "Malaga CF",
-        period: "2024-2025",
+        period: "2015-2016",
         image: "/images/clubs/malaga-cf.png"
     },
     {
         name: "Real Murcia",
-        period: "2025-2026",
+        period: "2010-2011",
         image: "/images/clubs/real-murcia.png"
     },
     {
         name: "UE Alzira",
-        period: "2025-2026",
+        period: "---",
         image: "/images/clubs/ue-alzira.png"
     },
     {
         name: "Vejle Boldklub",
-        period: "2025-2026",
+        period: "2022-2024",
         image: "/images/clubs/vejle-boldklub.png"
     }
 ];
